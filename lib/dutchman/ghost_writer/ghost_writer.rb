@@ -23,11 +23,5 @@ module Dutchman
     def self.speed(value)
       TypingSpeed.new(value)
     end
-
-    def self.available_speeds
-      { slow: 1.0 / (23.0 * 8 / 60).round(2),
-        moderate: 1.0 / (35.0 * 8 / 60).round(2),
-        fast: 1.0 / (50.0 * 8 / 60).round(2) }
-    end
   end
 end
