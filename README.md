@@ -44,33 +44,6 @@ end
 """)
 ```
 
-If you want to write to the same application several times it may be easier to
-create a reference to the application.
-
-```
-require 'dutchman'
-
-app = Dutchman.application("Sublime Text")
-
-app.write("""
-class Ball < Toy
-  def bounce
-
-  end
-end
-""")
-
-# This content would appear after the Ball class.
-
-app.write("""
-class Blocks < Toy
-  def stack
-
-  end
-end
-""")
-```
-
 The text is typed at the default typing speed "moderate". There are three
 available speeds.
 
