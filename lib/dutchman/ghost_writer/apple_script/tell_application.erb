@@ -1,0 +1,10 @@
+tell application "<%= name %>"
+  activate
+
+  tell application "System Events"
+  <% Array(command).each do |code| -%>
+    <%= code %>
+  <% end -%>
+  end
+
+end tell

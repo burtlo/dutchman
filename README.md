@@ -28,6 +28,9 @@ splicing the recording.
 So we have a screencast we are recording and we want to have Dutchman type
 out a block of code within our favorite editor Sublime Text.
 
+First, we would need to configure the editor to not help us with auto
+identation. By setting `"auto_indent": false`
+
 ```
 require 'dutchman'
 
@@ -72,9 +75,9 @@ The text is typed at the default typing speed "moderate". There are three
 available speeds.
 
 | Speed              | Words Per Minute (wpm) | Parameter |
-| slow               | 23                     | :slow     |
-| moderate (default) | 35                     | :moderate |
-| fast               | 40                     | :fast     |
+| slow               | ~23                    | :slow     |
+| moderate (default) | ~35                    | :moderate |
+| fast               | ~40                    | :fast     |
 
 
 Here we write our original slowly, to allow the viewers to savor the flavor of

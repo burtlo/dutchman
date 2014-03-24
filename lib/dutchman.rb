@@ -15,13 +15,8 @@ module Dutchman
     :moderate
   end
 
-  def self.application(name)
-    Application.new(name: name)
-  end
-
-
   def self._write(to,text,speed)
-    # TODO: send the command to applescript
+    GhostWriter.write application: to, text: text, speed: speed
   end
 
 
