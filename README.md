@@ -75,9 +75,9 @@ The text is typed at the default typing speed "moderate". There are three
 available speeds.
 
 | Speed              | Words Per Minute (wpm) | Parameter |
-| slow               | ~23                    | :slow     |
-| moderate (default) | ~35                    | :moderate |
-| fast               | ~40                    | :fast     |
+| slow               | ~ 23                   | :slow     |
+| moderate (default) | ~ 35                   | :moderate |
+| fast               | ~ 50                   | :fast     |
 
 
 Here we write our original slowly, to allow the viewers to savor the flavor of

@@ -19,5 +19,4 @@ module Dutchman
     GhostWriter.write application: to, text: text, speed: speed
   end
 
-
 end
