@@ -30,8 +30,10 @@ end tell"""
 
   describe "#typed_phrase" do
 
+    let(:typing_speed) { double("Speed",delay_between_characters: 0.1)}
+
     it "sends keystrokes over time to an application" do
-      subject.typed_phrase("Hello",0.1)
+      subject.typed_phrase("Hello",typing_speed)
       expect(subject.applescript).to eq  expected_applescript_command
     end
 

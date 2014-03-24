@@ -6,17 +6,18 @@ module Dutchman
   def self.write(params)
     to = params.delete(:to)
     text = params.delete(:text)
-    speed = params.delete(:speed) || default_speed
+    speed = params.fetch(:speed,default_speed)
+    humanize = params.fetch(:humanize,false)
 
-    _write(to,text,speed)
+    _write(application: to, text: text, speed: speed, humanize: humanize)
   end
 
   def self.default_speed
     :moderate
   end
 
-  def self._write(to,text,speed)
-    GhostWriter.write application: to, text: text, speed: speed
+  def self._write(params)
+    GhostWriter.write params
   end
 
 end

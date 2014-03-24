@@ -24,8 +24,11 @@ module Dutchman
           command [ apl_keystroke(key_name) ]
         end
 
-        def typed_phrase(phrase,delay)
-          command phrase.chars.map {|letter| [ apl_keystroke(letter), apl_delay(delay) ] }.flatten
+        def typed_phrase(phrase,typing_speed)
+          command(phrase.chars.map do |letter|
+            puts apl_delay(typing_speed.delay_between_characters)
+            [ apl_keystroke(letter), apl_delay(typing_speed.delay_between_characters) ]
+          end.flatten)
         end
 
         def applescript

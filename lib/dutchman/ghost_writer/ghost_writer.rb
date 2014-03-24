@@ -9,19 +9,20 @@ module Dutchman
     # @params params [Hash] the parameters :application, :text, :speed
     #
     def self.write(params)
-      params[:speed] = speed(params[:speed])
+      params[:speed] = speed(params[:speed],params[:humanize])
       # TODO: Platform Switching Here
       apple_script(params)
     end
 
     def self.apple_script(params)
       app = AppleScript.new.app(params[:application])
-      app.typed_phrase(params[:text],params[:speed].delay_between_characters)
+      app.typed_phrase(params[:text],params[:speed])
+      puts app.applescript
       app.execute
     end
 
-    def self.speed(value)
-      TypingSpeed.new(value)
+    def self.speed(value,humanize)
+      TypingSpeed.new(value,humanize)
     end
   end
 end

@@ -3,17 +3,30 @@ module Dutchman
 
     class TypingSpeed
 
-      def initialize(name)
+      def initialize(name,humanize)
         @name = name
+        @humanize = humanize
       end
 
       attr_reader :name
+
+      attr_reader :humanize
 
       #
       # The value in milliseconds to wait between characters
       #
       def delay_between_characters
-        1.0 / available_speeds[name]
+       standard_delay = (1.0 / available_speeds[name]).round(2)
+       current_delay = standard_delay + variance(standard_delay)
+       current_delay.round(2)
+      end
+
+      def variance(delay)
+        humanize ? random_number_between_pos_and_neg(delay) : 0.0
+      end
+
+      def random_number_between_pos_and_neg(number)
+        rand(number * 100).to_f / 100 * (rand(2).odd? ? -1 : 1)
       end
 
       def available_speeds
@@ -30,7 +43,7 @@ module Dutchman
       # The assumption is that each word is 8 characters in length.
       #
       def wpm_to_cps(wpm)
-        (wpm.to_f * 8.0 / 60.0).round(2)
+        wpm.to_f * 10.0 / 60.0
       end
     end
 
