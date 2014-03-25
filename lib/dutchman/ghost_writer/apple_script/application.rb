@@ -60,10 +60,24 @@ module Dutchman
         # AppleScript Commands
 
         def apl_keystroke(name)
-          if name == "\n"
-            "keystroke return"
-          else
-            "keystroke \"#{name}\""
+          "keystroke #{translate_to_keystroke(name)}"
+        end
+
+        def translate_to_keystroke(name)
+          keystroke_translations[name]
+        end
+
+        #
+        # Translate text characters to their counterpart in the world of
+        # AppleScript.
+        #
+        def keystroke_translations
+          @keystroke_translations ||= begin
+            hash = { "\n" => "return",
+              "\\" => "\\\\",
+              "\"" => "\\\"" }
+            hash.default_proc = proc { |hash,key| hash[key] = "\"#{key}\"" }
+            hash
           end
         end
 

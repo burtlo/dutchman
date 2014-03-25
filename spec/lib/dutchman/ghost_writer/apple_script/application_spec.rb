@@ -59,4 +59,25 @@ end tell}
 
   end
 
+  describe "All Characters" do
+
+    it "sends a keystroke to an application" do
+      subject.keystroke("abcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*()-=_+{}[]\\|:'\",.<>/?")
+      expect(subject.name).to eq application
+      expect(subject.applescript).to eq expected_applescript_command
+    end
+
+    let(:expected_applescript_command) do
+"""tell application \"#{application}\"
+  activate
+
+  tell application \"System Events\"
+      keystroke \"abcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*()-=_+{}[]\\|:'\",.<>/?\"
+    end
+
+end tell"""
+    end
+
+  end
+
 end
