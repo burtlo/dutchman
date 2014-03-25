@@ -60,9 +60,7 @@ because the viewer is obviously understood the original code we typed.
 ```
 require 'dutchman'
 
-app = Dutchman.application("Sublime Text")
-
-app.write(speed: :slow, text: """
+Dutchman.write(to: "Sublime Text", speed: :slow, text: """
 class Ball < Toy
   def bounce
 
@@ -72,9 +70,24 @@ end
 
 # This content would appear after the Ball class.
 
-app.write(speed: :fast, text: """
+Dutchman.write(to: "Sublime Text", speed: :fast, text: """
 class Blocks < Toy
   def stack
+
+  end
+end
+""")
+```
+
+The text is typed out in a uniform manner, to add a little variation to the
+speed, you can specify an additional parameter to `humanize` the typing.
+
+```
+require 'dutchman'
+
+Dutchman.write(to: "Sublime Text", speed: :slow, humanize: true, text: """
+class Ball < Toy
+  def bounce
 
   end
 end
