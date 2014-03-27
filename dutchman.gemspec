@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
 embarassment of all those typos, the viewers the discomfort of watching you
 fumble, or all the hours you are going to spend mind-numblingly slicing and
 splicing the recording.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/burtlo/dutchman"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
