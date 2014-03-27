@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Imagine you are writing a screenscast and wanted to save yourself the
+Imagine you are writing a screencast and wanted to save yourself the
 embarassment of all those typos, the viewers the discomfort of watching you
 fumble, or all the hours you are going to spend mind-numblingly slicing and
 splicing the recording.

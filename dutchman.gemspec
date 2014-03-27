@@ -8,8 +8,11 @@ Gem::Specification.new do |spec|
   spec.version       = Dutchman::VERSION
   spec.authors       = ["Franklin Webber"]
   spec.email         = ["franklin.webber@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{A an interface to have your computer do the automated type (OSX only).}
+  spec.description   = %q{Imagine you are writing a screencast and wanted to save yourself the
+embarassment of all those typos, the viewers the discomfort of watching you
+fumble, or all the hours you are going to spend mind-numblingly slicing and
+splicing the recording.}
   spec.homepage      = ""
   spec.license       = "MIT"
 

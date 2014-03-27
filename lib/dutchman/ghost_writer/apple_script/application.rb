@@ -26,7 +26,6 @@ module Dutchman
 
         def typed_phrase(phrase,typing_speed)
           command(phrase.chars.map do |letter|
-            puts apl_delay(typing_speed.delay_between_characters)
             [ apl_keystroke(letter), apl_delay(typing_speed.delay_between_characters) ]
           end.flatten)
         end

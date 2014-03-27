@@ -17,7 +17,6 @@ module Dutchman
     def self.apple_script(params)
       app = AppleScript.new.app(params[:application])
       app.typed_phrase(params[:text],params[:speed])
-      puts app.applescript
       app.execute
     end
 
